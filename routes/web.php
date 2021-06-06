@@ -34,7 +34,37 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/clients', [
         'index'
     ])->name('clients.index');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/clients/show/{id}', [
+    ClientsController::class, 
+    'show'
+]);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/clients/create', [
     ClientsController::class, 
     'create'
 ])->name('clients.create');
+
+Route::middleware(['auth:sanctum', 'verified'])->post('/clients/create', [
+    ClientsController::class, 
+    'store'
+]);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/clients/edit/{id}', [
+    ClientsController::class, 
+    'edit'
+]);
+
+Route::middleware(['auth:sanctum', 'verified'])->put('/clients/edit/{id}', [
+    ClientsController::class, 
+    'update'
+]);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/clients/delete/{id}', [
+    ClientsController::class, 
+    'delete'
+]);
+
+Route::middleware(['auth:sanctum', 'verified'])->delete('/clients/delete/{id}', [
+    ClientsController::class, 
+    'destroy'
+]);

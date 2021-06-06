@@ -4,10 +4,6 @@
       Olá {{ $page.props.user.name }} você está na crud de clientes
     </pre>
 
-    <div v-for="user in users" :key="user.id">
-      {{ user.name }}
-    </div>
-
     <div>
       <a href="/clients/create">Novo Cliente</a>
     </div>
@@ -23,9 +19,9 @@
       <tr v-for="client in clients" :key="client.id">
         <td><a v-bind:href="'clients/show/'+ client.id">{{ client.id }}</a></td>
         <td>{{ client.name }}</td>
-        <td>{{ client.city }}</td>
-        <td><a v-bind:href="'clients/edit/'+ client.id"><img/></a></td>
-        <td><a v-bind:href="'clients/remove/'+ client.id"><img/></a></td>
+        <td>{{ client.city_name }}</td>
+        <td><a v-bind:href="'clients/edit/'+ client.id">CLICK</a></td>
+        <td><a v-bind:href="'clients/delete/'+ client.id"><img/>CLICK</a></td>
       </tr>
   </table>
 
@@ -33,10 +29,8 @@
 </template>
 
 <script>
-import Button from '../../Jetstream/Button.vue';
   import Layout from '../../Layouts/AppLayout.vue';
   export default {
-  components: { Button },
     layout: Layout,
     props: [
       'clients'

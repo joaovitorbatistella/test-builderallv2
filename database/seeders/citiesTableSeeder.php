@@ -17,31 +17,31 @@ class citiesTableSeeder extends Seeder
     public function run()
     {
         DB::table('cities')->insert([
-            'name' => 'Tapera',
+            'city_name' => 'Tapera',
         ]);
         DB::table('cities')->insert([
-            'name' => 'Espumoso'
+            'city_name' => 'Espumoso'
         ]);
         DB::table('cities')->insert([
-            'name' => 'Selbach'
+            'city_name' => 'Selbach'
         ]);
         DB::table('cities')->insert([
-            'name' => 'Lagoa dos Três Cantos'
+            'city_name' => 'Lagoa dos Três Cantos'
         ]);
         DB::table('cities')->insert([
-            'name' => 'Ibirubá'
+            'city_name' => 'Ibirubá'
         ]);
         DB::table('cities')->insert([
-            'name' => 'Carazinho'
+            'city_name' => 'Carazinho'
         ]);
         DB::table('cities')->insert([
-            'name' => 'Passo Fundo'
+            'city_name' => 'Passo Fundo'
         ]);
         DB::table('cities')->insert([
-            'name' => 'Cruz Alta'
+            'city_name' => 'Cruz Alta'
         ]);
         DB::table('cities')->insert([
-            'name' => 'Porto Alegre'
+            'city_name' => 'Porto Alegre'
         ]);
     }
 }
