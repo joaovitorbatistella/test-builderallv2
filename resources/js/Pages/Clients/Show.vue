@@ -5,16 +5,11 @@
     </pre>
 
     <div class="cnt-content">
-      <div>
-    <dl>
-      <dt>ID</dt>
-            <dd>{{ client.id }}</dd>
-      <dt>Nome</dt>
-            <dd>{{ client.name }}</dd>
-      <dt>Cidade</dt>
-            <dd>{{ client.city_name }}</dd>
-    </dl>
-    </div>
+      <div class="show-clients">
+        <p><bold class="p">ID: </bold>{{ client.id }}</p>
+        <p><bold class="p">Nome: </bold>{{ client.name }}</p>
+        <p><bold class="p">Cidade: </bold>{{ client.city_name }}</p>
+      </div>
     </div>
     
   </layout>

@@ -4,18 +4,18 @@
       Olá <bold class="p">{{ $page.props.user.name }}</bold>, você está na tela de cadastro de clientes
     </pre>
 
-  <div class="cnt-content">
-    <form @submit.prevent="handleForm">
-      <input type="text" placeholder="Seu nome" name="name" v-model="updateForm.name">
 
-      <select v-model="updateForm.city_id" id="city_select">
-        <option selected disabled :value="updateForm.city_id">{{updateForm.city_name}}</option>
+    <form class="form-content" @submit.prevent="handleForm">
+      <input class="form-content-input" type="text" placeholder="Seu nome" name="name" v-model="updateForm.name">
+
+      <select class="form-content-input" v-model="updateForm.city_id" id="city_select">
+        <option class="form-content-input" selected disabled :value="updateForm.city_id">{{updateForm.city_name}}</option>
         <option v-for="city in cities" :key="city.id" :value="city.id">{{city.city_name}}</option>
       </select>
 
-      <button type="submit">Atualizar</button>
+      <button class="button-content-submit" type="submit">Atualizar</button>
     </form>
-  </div>
+
   
 
   </layout>

@@ -244,7 +244,6 @@
     import JetDropdownLink from '@/Jetstream/DropdownLink'
     import JetNavLink from '@/Jetstream/NavLink'
     import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
-
     export default {
         components: {
             JetApplicationMark,
@@ -254,14 +253,12 @@
             JetNavLink,
             JetResponsiveNavLink,
         },
-
         data() {
             return {
                 showingNavigationDropdown: false,
                 mode: ''
             }
         },
-
         methods: {
             switchToTeam(team) {
                 this.$inertia.put(route('current-team.update'), {
@@ -270,7 +267,6 @@
                     preserveState: false
                 })
             },
-
             logout() {
                 this.$inertia.post(route('logout'));
             },

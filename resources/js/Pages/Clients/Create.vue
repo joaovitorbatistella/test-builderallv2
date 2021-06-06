@@ -1,19 +1,18 @@
 <template>
   <layout>
     <div class="welcome">
-      Olá {<bold class="p">{{ $page.props.user.name }}</bold>, você está na tela de cadastro de clientes
+      Olá <bold class="p">{{ $page.props.user.name }}</bold>, você está na tela de cadastro de clientes
     </div>
 
-    <div class="cnt-content">
-      <form @submit.prevent="handleForm">
-        <input type="text" placeholder="Seu nome" name="name" v-model="form.name">
-        <select v-model="form.city" id="city_select">
-          <option selected disabled>Selecione</option>
+
+      <form class="form-content" @submit.prevent="handleForm">
+        <input class="form-content-input" type="text" placeholder="Seu nome" name="name" v-model="form.name">
+        <select class="form-content-input" v-model="form.city" id="city_select">
+          <option selected disabled vavlue="Selecione">Selecione</option>
           <option v-for="city in cities" :key="city.id" :value="city.id">{{city.city_name}}</option>
         </select>
-      <button type="submit">Cadastrar</button>
+      <button class="button-content-submit" type="submit">Cadastrar</button>
     </form>
-    </div>
 
   </layout>
 </template>

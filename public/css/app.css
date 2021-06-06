@@ -88,7 +88,7 @@ a[class*="a-button-new"]{
 .cnt-content{
   margin: 50px 80px;
   border-radius: 80px 15px 80px;
-  background-color: #9998984f;
+  background-color: rgba(125, 125, 125, 0.2);
   padding: 20px;
 }
 
@@ -154,6 +154,60 @@ a[class*="a-button-new"]{
   border-radius: 15px;
   background-color: #4a4844;
   color: #e9f0ef;
+}
+
+.show-clients{ 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+.show-clients p{ 
+  padding-right: 30px;
+}
+
+.form-content{
+  width: 300px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px #BB86FC;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.dark input[class*="form-content-input"] {
+  border-radius: 15px;
+  background-color: #4a4844;
+  color: #e9f0ef;
+  margin-bottom: 30px;
+}
+
+.dark select[class*="form-content-input"] {
+  border-radius: 15px;
+  background-color: #4a4844;
+  color: #e9f0ef;
+  margin-bottom: 30px;
+}
+
+.dark button[class*="button-content-submit"]{
+  background: #BB86FC;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: #e9f0ef;
+  font-weight: bold;
+}
+
+.dark a[class*="button-content-reset"]{
+  background: #e9f0ef;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: #4a4844;
+  font-weight: bold;
+  margin-left: 20px;
 }
 
 /*
@@ -195766,4 +195820,3 @@ select {
     --tw-backdrop-sepia: sepia(100%);
   }
 }
-

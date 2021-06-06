@@ -4,15 +4,12 @@
       Olá <bold class="p">{{ $page.props.user.name }}</bold>, você está na tela de exclusão
     </pre>
 
-  <div class="cnt-content">
-    <form @submit.prevent="handleForm">
-      <h2>{{ $page.props.user.name }}, você deseja deletar "{{client.name}}?"</h2>
+    <form class="form-content" @submit.prevent="handleForm">
+      <h2 style="margin-bottom: 20px">{{ $page.props.user.name }}, você deseja deletar "{{client.name}}?"</h2>
 
-      <button type="submit">Sim</button>
-      <a href="/clients">Não</a>
-    </form>
-  </div>
-    
+      <button class="button-content-submit" type="submit">Sim</button>
+      <a class="button-content-reset" href="/clients">Não</a>
+    </form>  
 
   </layout>
 </template>
