@@ -18005,7 +18005,44 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   layout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_0__.default,
-  props: ['clients']
+  data: function data() {
+    return {
+      term: ''
+    };
+  },
+  props: {
+    clients: Object
+  },
+  methods: {
+    search: function search() {
+      this.$inertia.get("/clients", {
+        term: this.term
+      }, {
+        preserveState: true
+      });
+    },
+    orderById: function orderById() {
+      this.$inertia.get("/clients", {
+        order: 'id'
+      }, {
+        preserveState: true
+      });
+    },
+    orderByName: function orderByName() {
+      this.$inertia.get("/clients", {
+        order: 'name'
+      }, {
+        preserveState: true
+      });
+    },
+    orderByCity: function orderByCity() {
+      this.$inertia.get("/clients", {
+        order: 'city_name'
+      }, {
+        preserveState: true
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -22396,21 +22433,31 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_2 = {
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "for": "search"
+}, "Search", -1
+/* HOISTED */
+);
+
+var _hoisted_3 = {
   style: {
     "width": "100%"
   }
 };
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", null, "Código"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", null, "Nome"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", null, "Cidade"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", null, "Editar"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", null, "Excluir")], -1
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", null, "Editar", -1
 /* HOISTED */
 );
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", null, null, -1
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", null, "Excluir", -1
 /* HOISTED */
 );
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("CLICK");
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("CLICK");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("layout");
@@ -22419,9 +22466,35 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("pre", null, "      Olá " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.name) + " você está na crud de clientes\n    ", 1
       /* TEXT */
-      ), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("table", _hoisted_2, [_hoisted_3, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.clients, function (client) {
+      ), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+        id: "search",
+        type: "text",
+        "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+          return $data.term = $event;
+        }),
+        onKeyup: _cache[2] || (_cache[2] = function () {
+          return $options.search && $options.search.apply($options, arguments);
+        })
+      }, null, 544
+      /* HYDRATE_EVENTS, NEED_PATCH */
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.term]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("table", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", {
+        onClick: _cache[3] || (_cache[3] = function () {
+          return $options.orderById && $options.orderById.apply($options, arguments);
+        })
+      }, "Código"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", {
+        onClick: _cache[4] || (_cache[4] = function () {
+          return $options.orderByName && $options.orderByName.apply($options, arguments);
+        })
+      }, "Nome"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", {
+        onClick: _cache[5] || (_cache[5] = function () {
+          return $options.orderByCity && $options.orderByCity.apply($options, arguments);
+        })
+      }, "Cidade"), _hoisted_4, _hoisted_5]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.clients.data, function (client, index) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("tr", {
-          key: client.id
+          key: client.id,
+          "class": {
+            'bg-gray-300': index % 2 === 0
+          }
         }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
           href: 'clients/show/' + client.id
         }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(client.id), 9
@@ -22436,9 +22509,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* PROPS */
         , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
           href: 'clients/delete/' + client.id
-        }, [_hoisted_4, _hoisted_5], 8
+        }, [_hoisted_6, _hoisted_7], 8
         /* PROPS */
-        , ["href"])])]);
+        , ["href"])])], 2
+        /* CLASS */
+        );
       }), 128
       /* KEYED_FRAGMENT */
       ))])];

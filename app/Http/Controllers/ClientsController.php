@@ -17,12 +17,20 @@ class ClientsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $clientsList = DB::table('clients')
         ->join('cities', 'cities.id', '=', 'clients.city_id')
         ->select('cities.city_name', 'clients.*')
-        ->get();
+        ->when($request->term, function ($query, $term) {
+            $query->where('name', 'LIKE', '%' . $term . '%')->orWhere(
+                'city_name', 'LIKE', '%' . $term . '%'
+            );
+        })
+        ->when($request->order, function ($query, $order) {
+            $query->orderBy($order, 'desc');
+        })
+        ->paginate();
         return Inertia::render('Clients/Home', [
             'clients' => $clientsList
         ]);
