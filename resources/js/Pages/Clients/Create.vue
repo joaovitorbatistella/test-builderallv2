@@ -1,14 +1,16 @@
 <template>
   <layout>
-    <div class="welcome">
+    <pre class="welcome">
       Olá <bold class="p">{{ $page.props.user.name }}</bold>, você está na tela de cadastro de clientes
-    </div>
+    </pre>
 
 
       <form class="form-content" @submit.prevent="handleForm">
+        <label for="">Nome completo: </label>
         <input class="form-content-input" type="text" placeholder="Seu nome" name="name" v-model="form.name">
+        <label for="">Cidade: </label>
         <select class="form-content-input" v-model="form.city" id="city_select">
-          <option selected disabled vavlue="Selecione">Selecione</option>
+          <option selected disabled >Selecione uma cidade</option>
           <option v-for="city in cities" :key="city.id" :value="city.id">{{city.city_name}}</option>
         </select>
       <button class="button-content-submit" type="submit">Cadastrar</button>
@@ -27,8 +29,8 @@
     data: () => {
     return {
       form: {
-        name: null,
-        city: null,
+        name: '',
+        city: '',
       }
     }
   },

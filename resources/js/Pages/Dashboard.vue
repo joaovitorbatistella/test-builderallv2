@@ -8,8 +8,9 @@
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <welcome />
+                <div align="center" class="dash-content overflow-hidden shadow-xl sm:rounded-lg">
+                   <h1 class="h1-dash">A base de dados contém {{ clients }} cliente(s)!</h1>
+                   <a class="button-content-go" href="/clients">CRUD</a>
                 </div>
             </div>
         </div>
@@ -25,5 +26,8 @@
             AppLayout,
             Welcome,
         },
+        props: [
+            'clients'
+        ],
     }
 </script>

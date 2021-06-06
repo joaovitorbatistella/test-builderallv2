@@ -5,7 +5,7 @@
     </pre>
 
     <form class="form-content" @submit.prevent="handleForm">
-      <h2 style="margin-bottom: 20px">{{ $page.props.user.name }}, você deseja deletar "{{client.name}}?"</h2>
+      <h2 style="margin-bottom: 20px">{{ $page.props.user.name }}, você deseja deletar "{{client.name}}"?</h2>
 
       <button class="button-content-submit" type="submit">Sim</button>
       <a class="button-content-reset" href="/clients">Não</a>

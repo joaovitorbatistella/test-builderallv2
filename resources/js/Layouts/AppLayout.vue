@@ -1,9 +1,9 @@
 <template>
-    <div class="app" :class="(mode === 'dark') ? 'dark' : 'dark'">
+    <div class="app" :class="(mode === 'dark') ? 'dark' : 'light'">
         <jet-banner />
 
         <div>
-            <nav class="bg-white border-b border-gray-100">
+            <nav class="nav-content">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -17,7 +17,7 @@
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
+                                <jet-nav-link  :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </jet-nav-link>
                             </div>
@@ -27,7 +27,13 @@
                                     Clientes
                                 </jet-nav-link>
                             </div>
+
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <Toggle :mode="mode" @toggle="toggle" />
+                            </div>
                         </div>
+
+                        
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <div class="ml-3 relative">
@@ -151,6 +157,8 @@
                         </jet-responsive-nav-link>
                     </div>
 
+                    
+
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
                         <div class="flex items-center px-4">
@@ -220,13 +228,6 @@
                 </div>
             </nav>
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow" v-if="$slots.header">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <slot name="header"></slot>
-                </div>
-            </header>
-
             <!-- Page Content -->
             <main>
                 <div >
@@ -244,6 +245,7 @@
     import JetDropdownLink from '@/Jetstream/DropdownLink'
     import JetNavLink from '@/Jetstream/NavLink'
     import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
+    import Toggle from '@/Jetstream/Toggle'
     export default {
         components: {
             JetApplicationMark,
@@ -252,12 +254,16 @@
             JetDropdownLink,
             JetNavLink,
             JetResponsiveNavLink,
+            Toggle,
         },
         data() {
             return {
                 showingNavigationDropdown: false,
                 mode: ''
             }
+        },
+         created () {
+            window.addEventListener('keyup', this.keyPress)
         },
         methods: {
             switchToTeam(team) {
@@ -270,6 +276,18 @@
             logout() {
                 this.$inertia.post(route('logout'));
             },
+            keyPress (e) {
+                if (e.key === 't') {
+                    this.toggle()
+                }
+            },
+            toggle () {
+                if (this.mode === "dark") {
+                    this.mode = "light"
+                } else {
+                    this.mode = "dark"
+                }
+            }
         }
     }
 </script>
