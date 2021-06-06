@@ -1,10 +1,10 @@
 <template>
   <layout>
-    <pre>
-      Olá {{ $page.props.user.name }} você está na tela de exclusão
+    <pre class="welcome">
+      Olá <bold class="p">{{ $page.props.user.name }}</bold>, você está na tela de exclusão
     </pre>
 
-  <div>
+  <div class="cnt-content">
     <form @submit.prevent="handleForm">
       <h2>{{ $page.props.user.name }}, você deseja deletar "{{client.name}}?"</h2>
 

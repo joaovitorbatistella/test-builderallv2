@@ -38,6 +38,125 @@ html {
 }
 
 /*
+My alteration
+*/
+
+.app{
+  width: 100vw;
+  min-height: 100vh;
+  background: #e9f0ef;
+  color: #121212;
+  font-family: 'Roboto', sans-serif;
+}
+
+.dark{
+  background: #121212;
+  color: #e9f0ef;
+  font-family: 'Roboto', sans-serif;
+}
+
+a[class*="a-button-new"]{
+   background: #979797;
+   padding: 10px;
+   text-align: center;
+   border-radius: 5px;
+   color: #e9f0ef;
+   font-weight: bold;
+   margin-top: 120px;
+}
+
+.dark a[class*="a-button-new"]{
+   background: #BB86FC;
+   padding: 10px;
+   text-align: center;
+   border-radius: 5px;
+   color: #e9f0ef;
+   font-weight: bold;
+   margin-top: 120px;
+}
+
+.welcome{
+  margin-top: 30px;
+  font-size: 22px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.p {
+  font-weight: bold;
+}
+
+.cnt-content{
+  margin: 50px 80px;
+  border-radius: 80px 15px 80px;
+  background-color: #9998984f;
+  padding: 20px;
+}
+
+.table-crud {
+  width: 98%;
+  min-height: 90%;
+  background-color: transparent!important;
+}
+
+.dark td[class*="table-crud-td"]{
+  background: #121212;
+  box-shadow: -1px -1px 3px #714e9c;
+ -webkit-box-shadow: -1px -1px 3px #714e9c;
+ -moz-box-shadow: -1px -1px 3px #714e9c;
+}
+
+.table-crud td {
+  background: #b1aeaeb4;
+ box-shadow: -1px -1px 3px #4a4844;
+-webkit-box-shadow: -1px -1px 3px #4a4844;
+-moz-box-shadow: -1px -1px 3px #4a4844;
+}
+
+.dark td[class*="table-crud-td"]:nth-child(even){
+  background: #141414;
+  box-shadow: -1px -1px 3px #714e9c;
+ -webkit-box-shadow: -1px -1px 3px #714e9c;
+ -moz-box-shadow: -1px -1px 3px #714e9c;
+}
+
+.table-crud td:nth-child(even) {
+  background: #bdbaba;
+ box-shadow: -1px -1px 3px #4a4844;
+-webkit-box-shadow: -1px -1px 3px #4a4844;
+-moz-box-shadow: -1px -1px 3px #4a4844;
+}
+
+.navi {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.crud-button-new {
+  margin: 15px 50px;
+}
+
+.crud-search {
+  margin-left: 80px;
+}
+
+.crud-search label{
+  margin-right: 15px;
+}
+
+.crud-search input{
+  border-radius: 15px;
+  background-color: #e2dddd;
+}
+
+.dark input[class*="crud-search-input"]{
+  border-radius: 15px;
+  background-color: #4a4844;
+  color: #e9f0ef;
+}
+
+/*
 Sections
 ========
 */
@@ -3616,11 +3735,6 @@ select {
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
-}
-
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
 }
 
 .bg-gray-400 {

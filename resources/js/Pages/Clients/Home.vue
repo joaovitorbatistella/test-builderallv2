@@ -1,34 +1,38 @@
 <template>
   <layout>
-    <pre>
-      Olá {{ $page.props.user.name }} você está na crud de clientes
+     <pre class="welcome">
+      Olá <bold class="p">{{ $page.props.user.name }}</bold>, você está na crud de clientes!
     </pre>
 
-    <div>
-      <a href="/clients/create">Novo Cliente</a>
-    </div>
+    <div class="cnt-content">
+      <div class="navi">
+        <div class="crud-button-new">
+          <a class="a-button-new" href="/clients/create">Novo Cliente</a>
+        </div>
 
-    <div>
-      <label for="search">Search</label>
-      <input id="search" type="text" v-model="term" @keyup="search">
-    </div>
+        <div class="crud-search">
+          <label for="search">Search: </label>
+          <input class="crud-search-input" id="search" type="text" v-model="term" @keyup="search">
+        </div>
+      </div>
 
-    <table style="width:100%">
-      <tr>
-        <th @click="orderById">Código</th>
-        <th @click="orderByName">Nome</th>
-        <th @click="orderByCity">Cidade</th>
-        <th>Editar</th>
-        <th>Excluir</th>
-      </tr>
-      <tr v-for="(client, index) in clients.data" :key="client.id" :class="{'bg-gray-300': index%2 === 0}">
-        <td><a v-bind:href="'clients/show/'+ client.id">{{ client.id }}</a></td>
-        <td>{{ client.name }}</td>
-        <td>{{ client.city_name }}</td>
-        <td><a v-bind:href="'clients/edit/'+ client.id">CLICK</a></td>
-        <td><a v-bind:href="'clients/delete/'+ client.id"><img/>CLICK</a></td>
-      </tr>
-  </table>
+      <table class="table-crud" align="center">
+        <tr>
+          <th @click="orderById">Código</th>
+          <th @click="orderByName">Nome</th>
+          <th @click="orderByCity">Cidade</th>
+          <th>Editar</th>
+          <th>Excluir</th>
+        </tr>
+        <tr v-for="(client, index) in clients.data" :key="client.id" :class="{'bg-gray-300': index%2 === 0}">
+          <td class="table-crud-td" align="center"><a v-bind:href="'clients/show/'+ client.id">{{ client.id }}</a></td>
+          <td class="table-crud-td" align="center"><a v-bind:href="'clients/show/'+ client.id">{{ client.name }}</a></td>
+          <td class="table-crud-td" align="center"><a v-bind:href="'clients/show/'+ client.id">{{ client.city_name }}</a></td>
+          <td class="table-crud-td" align="center"><a v-bind:href="'clients/edit/'+ client.id">CLICK</a></td>
+          <td class="table-crud-td" align="center"><a v-bind:href="'clients/delete/'+ client.id"><img/>CLICK</a></td>
+        </tr>
+    </table>
+  </div>
 
   </layout>
 </template>

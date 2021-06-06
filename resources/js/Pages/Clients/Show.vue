@@ -1,11 +1,11 @@
 <template>
   <layout>
-    <pre>
-      Olá {{ $page.props.user.name }} você está na crud de clientes
+    <pre class="welcome">
+      Olá <bold class="p">{{ $page.props.user.name }}</bold>, você está vendo detalhes do cliente <bold class="p">{{ client.name }}</bold>!
     </pre>
 
-    <div>
-      <b>{{ client.name }}</b>
+    <div class="cnt-content">
+      <div>
     <dl>
       <dt>ID</dt>
             <dd>{{ client.id }}</dd>
@@ -15,6 +15,8 @@
             <dd>{{ client.city_name }}</dd>
     </dl>
     </div>
+    </div>
+    
   </layout>
 </template>
 
