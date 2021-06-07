@@ -28,7 +28,7 @@
           <td class="table-crud-td" align="center"><a v-bind:href="'clients/show/'+ client.id">{{ client.id }}</a></td>
           <td class="table-crud-td" align="center"><a v-bind:href="'clients/show/'+ client.id">{{ client.name }}</a></td>
           <td class="table-crud-td" align="center"><a v-bind:href="'clients/show/'+ client.id">{{ client.city_name }}</a></td>
-          <td class="table-crud-td" align="center"><a v-bind:href="'clients/edit/'+ client.id"></a></td>
+          <td class="table-crud-td" align="center"><a v-bind:href="'clients/edit/'+ client.id">CLICK</a></td>
           <td class="table-crud-td" align="center"><a v-bind:href="'clients/delete/'+ client.id"><img/>CLICK</a></td>
         </tr>
     </table>

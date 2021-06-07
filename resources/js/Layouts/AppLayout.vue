@@ -262,9 +262,6 @@
                 mode: ''
             }
         },
-         created () {
-            window.addEventListener('keyup', this.keyPress)
-        },
         methods: {
             switchToTeam(team) {
                 this.$inertia.put(route('current-team.update'), {
@@ -275,11 +272,6 @@
             },
             logout() {
                 this.$inertia.post(route('logout'));
-            },
-            keyPress (e) {
-                if (e.key === 't') {
-                    this.toggle()
-                }
             },
             toggle () {
                 if (this.mode === "dark") {

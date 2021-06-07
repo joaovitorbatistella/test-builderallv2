@@ -17343,9 +17343,6 @@ __webpack_require__.r(__webpack_exports__);
       mode: ''
     };
   },
-  created: function created() {
-    window.addEventListener('keyup', this.keyPress);
-  },
   methods: {
     switchToTeam: function switchToTeam(team) {
       this.$inertia.put(route('current-team.update'), {
@@ -17356,11 +17353,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     logout: function logout() {
       this.$inertia.post(route('logout'));
-    },
-    keyPress: function keyPress(e) {
-      if (e.key === 't') {
-        this.toggle();
-      }
     },
     toggle: function toggle() {
       if (this.mode === "dark") {
@@ -22342,6 +22334,13 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+  "class": "button-content-reset",
+  href: "/clients"
+}, "Voltar", -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_bold = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("bold");
 
@@ -22376,7 +22375,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.form.name]]), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("select", {
-        "class": "form-content-input",
+        "class": "form-content-select",
         "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
           return _ctx.form.city = $event;
         }),
@@ -22392,7 +22391,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* KEYED_FRAGMENT */
       ))], 512
       /* NEED_PATCH */
-      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, _ctx.form.city]]), _hoisted_7], 32
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, _ctx.form.city]]), _hoisted_7, _hoisted_8], 32
       /* HYDRATE_EVENTS */
       )];
     }),
@@ -22563,7 +22562,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.updateForm.name]]), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("select", {
-        "class": "form-content-input",
+        "class": "form-content-select",
         "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
           return $data.updateForm.city_id = $event;
         }),
@@ -22762,7 +22761,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT, PROPS */
         , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
           href: 'clients/edit/' + client.id
-        }, null, 8
+        }, "CLICK", 8
         /* PROPS */
         , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("td", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
           href: 'clients/delete/' + client.id

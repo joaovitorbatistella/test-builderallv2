@@ -9,11 +9,12 @@
         <label for="">Nome completo: </label>
         <input class="form-content-input" type="text" placeholder="Seu nome" name="name" v-model="form.name">
         <label for="">Cidade: </label>
-        <select class="form-content-input" v-model="form.city" id="city_select">
+        <select class="form-content-select" v-model="form.city" id="city_select">
           <option selected disabled >Selecione uma cidade</option>
           <option v-for="city in cities" :key="city.id" :value="city.id">{{city.city_name}}</option>
         </select>
       <button class="button-content-submit" type="submit">Cadastrar</button>
+      <a class="button-content-reset" href="/clients">Voltar</a>
     </form>
 
   </layout>
