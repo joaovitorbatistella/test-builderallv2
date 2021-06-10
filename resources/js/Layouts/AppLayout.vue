@@ -29,6 +29,13 @@
                             </div>
 
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <jet-nav-link :href="route('github.index')" :active="route().current('clients.index')">
+                                    GitHub API
+                                </jet-nav-link>
+                            </div>
+
+
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <Toggle :mode="mode" @toggle="toggle" />
                             </div>
                         </div>

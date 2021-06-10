@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GitHubController;
 use Inertia\Inertia;
 
 /*
@@ -75,3 +76,8 @@ Route::middleware(['auth:sanctum', 'verified'])->delete('/clients/delete/{id}', 
     ClientsController::class, 
     'destroy'
 ]);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/github', [
+    GitHubController::class, 
+    'index'
+])->name('github.index');
